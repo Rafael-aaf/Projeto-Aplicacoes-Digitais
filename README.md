@@ -27,3 +27,29 @@ Ocorre a chamada da API
 
 
 ## database.py
+Para o banco de dados, eu usei o SQLite. Como ele só armazena as consultas do usuário, apenas uma tabela com 6 atributos (além da chave primária) foi o suficiente, como pode-se ver na imagem a seguir de seu modelo conceitual.
+
+![Tabela!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/969704fbf0190e756f58d24a75197b68645869be/prints/tabela_pokedex.png)
+
+
+Nesse módulo do código, foram utilizados 2 scripts SQL, um para a criação e outro para inserção de dados. O fluxo de execução é o seguinte: frontend.py -> import database -> database.py -> cursor.execute() -> mydatabase.db (se o arquivo do banco ainda não existir) -> database.inserir_pokemon() -> mydatabase.db
+
+Os scripts SQL estão transcritos a seguir:
+### Criação de tabela
+```sql
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    number TEXT NOT NULL,
+    name TEXT NOT NULL,
+    color TEXT NOT NULL,
+    weight TEXT NOT NULL,
+    height TEXT NOT NULL,
+    ability TEXT NOT NULL
+)
+```
+
+### Inserção na tabela
+```sql
+INSERT INTO usuarios (number, name, color, weight, height, ability)
+        VALUES (?, ?, ?, ?, ?, ?)
+```
