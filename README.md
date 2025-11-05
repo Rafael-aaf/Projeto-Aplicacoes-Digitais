@@ -5,6 +5,7 @@
 - [pokemon.py](#pokemonpy)
 - [frontend.py](#frontendpy)
 - [database.py](#databasepy)
+- [test_pokemon.py](#test_pokemonpy)
 
 ## Descrição do problema
 Para o projeto, eu decidi criar uma Pokédex, onde o usuário digita o nome de um Pokémon e retorna vários dados sobre ele, como o número na Pokédex, o nome, o peso, a altura, a abilidade e os tipos, além de uma imagem dele e a sua cor. Para isso, as tecnologias listadas a baixo foram utilizadas, elas garantem o funcionamento adequado com uma GUI, testes unitários e um banco de dados para armazenar as consultas.
@@ -18,7 +19,7 @@ Para o projeto, eu decidi criar uma Pokédex, onde o usuário digita o nome de u
 - Pillow
 
 
-O projeto foi dividido em 3 módulos, [pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/pokemon.py), [frontend.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/frontend.py), [database.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/database.py), que estão explicados a seguir.
+O projeto foi dividido em 3 módulos, [pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/pokemon.py), [frontend.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/frontend.py), [database.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/database.py), [test_pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/550234826fe2360a35aee07f6b89677e96d658c1/unit_tests/test_pokemon.py), que estão explicados a seguir.
 
 ## pokemon.py
 Ocorre a chamada da API
@@ -53,3 +54,6 @@ CREATE TABLE IF NOT EXISTS usuarios (
 INSERT INTO usuarios (number, name, color, weight, height, ability)
         VALUES (?, ?, ?, ?, ?, ?)
 ```
+
+## test_pokemon.py
+Faz testes de Pikachu e None
