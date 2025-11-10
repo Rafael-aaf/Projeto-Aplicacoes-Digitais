@@ -30,10 +30,12 @@ Ocorre a chamada da API
 ## database.py
 Para o banco de dados, eu usei o SQLite. Como ele só armazena as consultas do usuário, apenas uma tabela com 6 atributos (além da chave primária) foi o suficiente, como pode-se ver na imagem a seguir de seu modelo conceitual.
 
-![Tabela!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/969704fbf0190e756f58d24a75197b68645869be/prints/tabela_pokedex.png)
+![Modelo conceitual!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/969704fbf0190e756f58d24a75197b68645869be/prints/tabela_pokedex.png)
 
 
-Nesse módulo do código, foram utilizados 2 scripts SQL, um para a criação e outro para inserção de dados. O fluxo de execução é o seguinte: frontend.py -> import database -> database.py -> cursor.execute() -> mydatabase.db (se o arquivo do banco ainda não existir) -> database.inserir_pokemon() -> mydatabase.db
+Nesse módulo do código, foram utilizados 2 scripts SQL, um para a criação e outro para a inserção de dados. O fluxo de execução pode ser visto no diagrama de sequência a seguir: frontend.py -> import database -> database.py -> cursor.execute() -> mydatabase.db (se o arquivo do banco ainda não existir) -> database.inserir_pokemon() -> mydatabase.db
+
+![Diagrama dos módulos!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/59c78de3965290670cfb28966876d1947dfae75c/prints/Diagrama_seq_modulos_pokedex.drawio.png)
 
 Os scripts SQL estão transcritos a seguir:
 ### Criação de tabela
@@ -56,4 +58,7 @@ INSERT INTO usuarios (number, name, color, weight, height, ability)
 ```
 
 ## test_pokemon.py
-Faz testes de Pikachu e None
+Para os testes unitários, utilizei a biblioteca pytest e importei o módulo pokemon.py. Apenas 2 testes foram feitos, para testar se um Pokémon existe e se retorna os dados corretos, e para testar erro, quando um Pokémon não existe.
+
+Os testes usam ```raw_data``` para armazenar um dicionário com todos os dados disponíveis do Pokémon na API (Python converte arquivos json em dicionário), e ```data``` para armazenar um dicionário com os dados que serão utilizados, como o número na Pokédex, o nome, o peso, a altura, a abilidade e a sua cor.
+
