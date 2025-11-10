@@ -2,6 +2,7 @@
 
 ## Sumário
 - [Descrição do problema](#descrição-do-problema)
+- [Imagens](#imagens)
 - [pokemon.py](#pokemonpy)
 - [frontend.py](#frontendpy)
 - [database.py](#databasepy)
@@ -20,6 +21,14 @@ Para o projeto, eu decidi criar uma Pokédex, onde o usuário digita o nome de u
 
 
 O projeto foi dividido em 4 módulos, [pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/pokemon.py), [frontend.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/frontend.py), [database.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/database.py), [test_pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/550234826fe2360a35aee07f6b89677e96d658c1/unit_tests/test_pokemon.py), que estão explicados a seguir.
+
+## Imagens
+
+![Glaceon!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/pokemon_api_glaceon.jpg)
+![Pikachu!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/pokemon_api_pikachu.jpg)
+![Emolga!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/Pokemon_api_Emolga.png)
+![Umbreon!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/pokemon_api_umbreon.jpg)
+![Mew!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/pokemon_api_mew.jpg)
 
 ## pokemon.py
 Neste primeiro módulo ocorre a chamada da API, com a biblioteca Requests, e é onde os dados são coletados e retornados como um dicionário. O módulo é dividido em 2 funções, a função ```get_pokemon_info``` e o ```main```.
@@ -61,11 +70,11 @@ data = pokemon.main(pokemon_info)
 
 Sobre a estrutura da interface gráfica, há uma tela inicial de 270x300, com o título POKEMON. Para a organização dos widgets foi utilizado um sistema de grid, que se expande desde a linha 0 até a 7, apenas o widget da imagem tem mais de uma linha, por isso foi usado o paramêtro ```rowspan=4```. 
 
-Os widgets usados foram: Entry, Button e Label. Em ```Entry``` o usuário digita o nome de um Pokémon e em ```Button``` é executado a função ```search```, como visto na linha ```button = tk.Button(root, text="click!", command=search)```, a função preenche as Label com os dados de ```data```, substituindo os textos e o placeholder de uma imagem transparente.
+Os widgets usados foram: Entry, Button e Label. Em ```Entry``` o usuário digita o nome de um Pokémon e em ```Button``` é executado a função ```search```, como visto na linha ```button = tk.Button(root, text="click!", command=search)```, a função preenche as ```Labels``` com os dados de ```data```, substituindo os textos e o placeholder de uma imagem transparente.
 
 Na imagem a seguir, pode-se ver um exemplo do código e da localização dos widgets.
 
-INSERIR IMAGEM AQUI!!!!!
+![Pikachu com anotações!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/effb611049eb46412f7455346e42ceb65ea513c1/prints/Pikachu_interface_com_anotacoes.png)
 
 ## database.py
 Para o banco de dados, eu usei o SQLite. Como ele só armazena as consultas do usuário, apenas uma tabela com 6 atributos (além da chave primária) foi o suficiente, como pode-se ver na imagem a seguir de seu modelo conceitual.
@@ -101,3 +110,4 @@ INSERT INTO usuarios (number, name, color, weight, height, ability)
 Para os testes unitários, utilizei a biblioteca pytest e importei o módulo pokemon.py. Apenas 2 testes foram feitos, para testar se um Pokémon existe e se retorna os dados corretos, e para testar erro, quando um Pokémon não existe.
 
 Os testes usam ```raw_data``` para armazenar um dicionário com todos os dados disponíveis do Pokémon na API (Python converte arquivos json em dicionário), e ```data``` para armazenar um dicionário com os dados que serão utilizados, como o número na Pokédex, o nome, o peso, a altura, a abilidade e a sua cor.
+
