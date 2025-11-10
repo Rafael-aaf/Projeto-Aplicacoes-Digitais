@@ -2,7 +2,7 @@
 
 ## Sumário
 - [Descrição do problema](#descrição-do-problema)
-- [Imagens](#imagens)
+- [Imagens e Vídeo](#imagens-e-vídeo)
 - [pokemon.py](#pokemonpy)
 - [frontend.py](#frontendpy)
 - [database.py](#databasepy)
@@ -22,7 +22,9 @@ Para o projeto, eu decidi criar uma Pokédex, onde o usuário digita o nome de u
 
 O projeto foi dividido em 4 módulos, [pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/pokemon.py), [frontend.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/frontend.py), [database.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/91c835f8ce8ca168286377dc91aca5f319f46826/database.py), [test_pokemon.py](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/550234826fe2360a35aee07f6b89677e96d658c1/unit_tests/test_pokemon.py), que estão explicados a seguir.
 
-## Imagens
+## Imagens e Vídeo
+
+https://github.com/user-attachments/assets/236212a9-56f6-461e-99a8-ec68933c2389
 
 ![Glaceon!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/pokemon_api_glaceon.jpg)
 ![Pikachu!](https://github.com/Rafael-aaf/Projeto-Aplicacoes-Digitais/blob/4636762c2500cd7b871515b1addfdb5e4a3fe63d/prints/pokemon_api_pikachu.jpg)
@@ -110,4 +112,5 @@ INSERT INTO usuarios (number, name, color, weight, height, ability)
 Para os testes unitários, utilizei a biblioteca pytest e importei o módulo pokemon.py. Apenas 2 testes foram feitos, para testar se um Pokémon existe e se retorna os dados corretos, e para testar erro, quando um Pokémon não existe.
 
 Os testes usam ```raw_data``` para armazenar um dicionário com todos os dados disponíveis do Pokémon na API (Python converte arquivos json em dicionário), e ```data``` para armazenar um dicionário com os dados que serão utilizados, como o número na Pokédex, o nome, o peso, a altura, a abilidade e a sua cor.
+
 
