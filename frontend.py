@@ -8,7 +8,16 @@ import database
 def search():
     pokemon_name = entry.get().lower().strip()
     if not pokemon_name:
-        nameLabel.config(text="Erro!")
+        color = "white"
+        root.configure(bg=color)
+        nameLabel.config(text="Erro!", bg=color)
+        idLabel.config(text="#0000", bg=color)
+        weightLabel.config(text="Weight: \n", bg=color)
+        heightLabel.config(text="Height: \n", bg=color)
+        abilityLabel.config(text="Ability: \n", bg=color)
+        typeLabel.config(text="Types: \n", bg=color)
+        spriteLabel.config(image=tk_img, bg=color)
+        spriteLabel.image = tk_img
         return
     
     pokemon_info = pokemon.get_pokemon_info(pokemon_name)
